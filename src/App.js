@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const api = {
-  key: "e857395d006b17a0ecd8aac47d340e12",
-  base: "https://api.openweathermap.org/data/2.5/"
+  key: process.env.REACT_APP_API_KEY,
+  base: process.env.REACT_APP_API_BASE
 }
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
 
     return `${day} ${date} ${month} ${year}`
   }
-
+  
   return (
     <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : ('app')}>
       <main>
